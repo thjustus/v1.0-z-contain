@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Z Containment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hud">
+        <p>Pontuação: <span id="score">0</span></p>
+        <p>Ouro: <span id="gold">0</span></p>
+        <p>Turno: <span id="turnoAtual">1</span></p>
+        <p>Vida: <span id="playerHp">100</span></p>
+    </div>
+    <div id="eventPopup" style="display:none;"></div>
+    <div id="gameOver" style="display:none;">
+        <h1>Game Over</h1>
+        <p>Sua Pontuação: <span id="finalScore"></span></p>
+        <button onclick="restartGame()">Jogar Novamente</button>
+        <button onclick="resetProgress()">Resetar Progresso</button>
+    </div>
+    <div id="abilityShop" style="display: none;">
+        <h2>🧠 Habilidades Especiais</h2>
+        <div id="abilityList"></div>
+        <button onclick="closeAbilityShop()">Fechar Loja</button>
+    </div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <script src="game.js"></script>
+</body>
+</html>
