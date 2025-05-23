@@ -1,0 +1,131 @@
+body {
+  background: #111;
+  color: #00ff00; /* Cor verde para estilo militar/apocalíptico */
+  font-family: 'Press Start 2P', cursive; /* Fonte pixelada para atmosfera retrô/militar */
+  margin: 0;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+/* Import da fonte pixelada (adicione ao seu CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+canvas {
+  border: 2px solid #00ff00; /* Borda verde */
+  display: block;
+  margin: 20px auto;
+  background-color: #222;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Sombra verde */
+}
+
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.8); /* Fundo mais escuro */
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1001;
+  border: 1px solid #00ff00; /* Borda verde */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.hud-section {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hud-label {
+  font-size: 0.8em;
+  color: #00cc00; /* Tom mais claro de verde para labels */
+}
+
+.hud-value {
+  font-size: 1.1em;
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.hp-bar-container {
+  width: 100px;
+  height: 12px;
+  background-color: #333;
+  border: 1px solid #00ff00;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.hp-bar {
+  height: 100%;
+  background-color: #ff0000; /* Barra de HP vermelha */
+  width: 100%; /* Começa cheia */
+  transition: width 0.2s ease-out;
+}
+
+#gameOver, #startMenu, #abilityShop {
+  position: absolute;
+  left: 50%;
+  top: 50%; /* Centraliza verticalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centralização real */
+  background: #222;
+  padding: 30px;
+  border: 2px solid #00ff00;
+  z-index: 1002;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  font-family: 'Press Start 2P', cursive;
+}
+
+#startMenu {
+  display: none;
+}
+
+#shopList button, #startMenu button, #gameOver button {
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: #008800; /* Botões verdes */
+  color: white;
+  border: 1px solid #00ff00;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#shopList button:hover, #startMenu button:hover, #gameOver button:hover {
+  background-color: #00bb00;
+}
+
+progress#levelProgress {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 20px;
+  /* Estilização da barra de progresso */
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #00ff00;
+  border-radius: 5px;
+}
+
+/* Para navegadores Webkit (Chrome, Safari) */
+progress#levelProgress::-webkit-progress-bar {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+progress#levelProgress::-webkit-progress-value {
+  background-color: #00cc00; /* Cor de preenchimento */
+  border-radius: 5px;
+}
+
+/* Para navegadores Firefox */
+progress#levelProgress::-moz-progress-bar {
+  background-color: #00cc00;
+  border-radius: 5px;
+}

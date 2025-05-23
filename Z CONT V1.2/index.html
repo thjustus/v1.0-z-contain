@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Z Containment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="startMenu">
+    <h1>Z Containment</h1>
+    <button onclick="startGame()">Iniciar Jogo</button>
+  </div>
+
+  <div id="hud">
+    <div class="hud-section">
+      <span class="hud-label">PONTUAÇÃO:</span> <span id="score" class="hud-value">0</span>
+    </div>
+    <div class="hud-section">
+      <span class="hud-label">OURO:</span> <span id="gold" class="hud-value">0</span>
+    </div>
+    <div class="hud-section">
+      <span class="hud-label">TURNO:</span> <span id="turnoAtual" class="hud-value">1</span>
+    </div>
+    <div class="hud-section">
+      <span class="hud-label">VIDA:</span> <span id="playerHp" class="hud-value">100</span>
+      <div class="hp-bar-container">
+        <div id="playerHpBar" class="hp-bar"></div>
+      </div>
+    </div>
+    <div class="hud-section">
+      <span class="hud-label">RECORDE:</span> <span id="highScore" class="hud-value">0</span>
+    </div>
+    <div class="hud-section">
+      <span class="hud-label">ARMA:</span> <span id="currentWeapon" class="hud-value">Pistola</span>
+    </div>
+  </div>
+
+  <div id="gameOver" style="display:none;">
+    <h1>GAME OVER</h1>
+    <p>SUA PONTUAÇÃO: <span id="finalScore"></span></p>
+    <p>MELHOR PONTUAÇÃO: <span id="finalHighScore"></span></p>
+    <button onclick="restartGame()">JOGAR NOVAMENTE</button>
+  </div>
+
+  <div id="abilityShop" style="display:none;">
+    <h2>LOJA DE EQUIPAMENTOS</h2>
+    <div id="shopList"></div>
+    <button onclick="closeAbilityShop()">FECHAR LOJA</button>
+  </div>
+
+  <progress id="levelProgress" value="0" max="100"></progress>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
